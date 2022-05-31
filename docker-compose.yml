@@ -18,6 +18,29 @@ services:
       - .:/usr/src/app
       - /usr/src/app/node_modules
     restart: unless-stopped
+
+  dev-postgres-db:
+    image: postgres:13
+    ports:
+      - 5434:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: dailyhussle_api
+    networks:
+      - dailyhussle-network
+
+  test-postgres-db:
+    image: postgres:13
+    ports:
+      - 5435:5432
+    environment:
+      POSTGRES_USER: root
+      POSTGRES_PASSWORD: 1234
+      POSTGRES_DB: dailyhussle_api
+    networks:
+      - dailyhussle-network
+
   # prod:
   #   container_name: dailyhussle_api_prod
   #   image: dailyhussle-api-prod:1.0.0
