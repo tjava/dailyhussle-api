@@ -25,5 +25,4 @@ jobs:
           username: ${{ secrets.username }}
           password: ${{ secrets.password }}
           script: |
-            git pull
             docker-compose up --build -d
