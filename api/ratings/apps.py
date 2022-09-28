@@ -1,6 +1,6 @@
 from django.apps import AppConfig
 
 
-class AuthsConfig(AppConfig):
+class RatingsConfig(AppConfig):
     default_auto_field = 'django.db.models.BigAutoField'
-    name = 'api.auths'
+    name = 'ratings'
