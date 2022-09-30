@@ -40,14 +40,12 @@ class ProfileSerializer(serializers.ModelSerializer):
         last_name = obj.user.last_name.title()
         return f"{first_name} {last_name}"
 
-    # def get_reviews(self, obj):
-    #     reviews = obj.agent_review.all()
-    #     serializer = RatingSerializer(reviews, many=True)
-    #     return serializer.data
+    def get_reviews(self, obj):
+        pass
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        if instance.top_agent:
+        if instance.top_employer:
             representation["top_employer"] = True
         return representation
 
@@ -68,6 +66,6 @@ class UpdateProfileSerializer(serializers.ModelSerializer):
 
     def to_representation(self, instance):
         representation = super().to_representation(instance)
-        if instance.top_agent:
+        if instance.top_employer:
             representation["top_employer"] = True
         return representation

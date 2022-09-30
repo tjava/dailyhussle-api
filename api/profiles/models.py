@@ -34,9 +34,7 @@ class Profile(TimeStampedUUIDModel):
         default=Gender.OTHER,
         max_length=20,
     )
-    age = models.IntegerField(
-        verbose_name=_("Your Age"), max_length=2, blank=True, null=True
-    )
+    age = models.IntegerField(verbose_name=_("Your Age"), blank=True, null=True)
     state = models.CharField(
         verbose_name=_("State"),
         max_length=180,

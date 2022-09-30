@@ -8,7 +8,7 @@ urlpatterns = [
     path("api/v1/auth/", include("djoser.urls")),
     path("api/v1/auth/", include("djoser.urls.jwt")),
     path("api/v1/profile/", include("api.profiles.urls")),
-] + static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
+]
 
 admin.site.site_header = "Daily Hussle Admin"
 admin.site.site_title = "Daily Hussle Admin Panel"

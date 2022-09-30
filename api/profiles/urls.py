@@ -7,5 +7,5 @@ urlpatterns = [
     path(
         "update/<str:username>/", UpdateProfileAPIView.as_view(), name="update_profile"
     ),
-    path("top-employer/all/", TopEmployersListAPIView.as_view(), name="top-agents"),
+    path("top-employer/all/", TopEmployersListAPIView.as_view(), name="top-empoyer"),
 ]
