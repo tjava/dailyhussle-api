@@ -41,6 +41,7 @@ THIRD_PERTY_APPS = [
     "phonenumber_field",
     "djoser",
     "rest_framework_simplejwt",
+    "drf_yasg",
 ]
 
 LOCAL_APPS = [
@@ -175,6 +176,16 @@ DJOSER = {
         "current_user": "api.users.serializers.UserSerializer",
         "user_delete": "djoser.serializers.UserDeleteSerializer",
     },
+}
+
+SWAGGER_SETTINGS = {
+    "SECURITY_DEFINITIONS": {
+        "Auth Token eg [Bearer (JWT)]": {
+            "type": "apiKey",
+            "name": "Authorization",
+            "in": "header",
+        }
+    }
 }
 
 import logging

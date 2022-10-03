@@ -12,7 +12,7 @@ class UserSerializer(serializers.ModelSerializer):
     profile_photo = serializers.ImageField(source="profile.profile_photo")
     state = serializers.CharField(source="profile.state")
     city = serializers.CharField(source="profile.city")
-    top_seller = serializers.BooleanField(source="profile.top_seller")
+    top_employer = serializers.BooleanField(source="profile.top_employer")
     first_name = serializers.SerializerMethodField()
     last_name = serializers.SerializerMethodField()
     full_name = serializers.SerializerMethodField(source="get_full_name")
@@ -31,7 +31,7 @@ class UserSerializer(serializers.ModelSerializer):
             "profile_photo",
             "state",
             "city",
-            "top_seller",
+            "top_employer",
         ]
 
     def get_first_name(self, obj):
